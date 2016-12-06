@@ -8,6 +8,7 @@ angular.module('documentLeakModule', ['ngRoute'])
     <h1 ng-init="leakDocument()">Document/Window event listeners memory leak</h1>
     <p>Added event listener to document</p>
     <p>Start using page (navigate to Home and back). Get heap snapshots. Make sure that in context you will have documentLeakFunction in (scope) section in comparison view</p>
+    <img src="imgs/document.png" alt="document leak" />
     `,
     controller: 'documentController'
   });

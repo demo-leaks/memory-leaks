@@ -8,6 +8,7 @@ angular.module('intervalLeakModule', ['ngRoute'])
       <h1>Interval memory leak</h1>
       <p>Start using page (navigate through routes) or simply wait 2-5 seconds after each measure.</p>
       <p>Take heap snapshot and notice increase</p>
+      <img src="imgs/interval-leak.png" alt="rootScope snapshots"/>
       <button ng-click="stopLeak()">Stop interval</button>`,
     controller: 'IntervalController'
   });

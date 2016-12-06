@@ -22,7 +22,6 @@
       padding: 0;
     }
     .nav-tabs {
-      border: 1px solid #ddd;
       margin: 20px 0;
     }
 
@@ -31,18 +30,29 @@
       border-top: 1px solid #ddd;
       padding: 20px;
     }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-bottom: 10px;
+    }
+
   </style>
 </head>
 <body class="container">
   <ul class="nav nav-tabs">
-    <li class="nav-item"><a class="nav-link" href="#!/home">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="#!/rootscopeLeak">Rootscope Leak</a></li>
-    <li class="nav-item"><a class="nav-link" href="#!/intervalLeak">Interval Leak</a></li>
-    <li class="nav-item"><a class="nav-link" href="#!/documentLeak">Document Leak</a></li>
+    <li class="active"><a class="nav-link" href="#!/home">Home</a></li>
+    <li><a class="nav-link" href="#!/rootscopeLeak">Rootscope Leak</a></li>
+    <li><a class="nav-link" href="#!/intervalLeak">Interval Leak</a></li>
+    <li><a class="nav-link" href="#!/documentLeak">Document Leak</a></li>
   </ul>
 
   <div ng-view></div>
-
+  
   <script src="vendors/angular.min.js"></script>
   <script src="vendors/angular-route.min.js"></script>
   <script src="app/app.js"></script>
@@ -50,5 +60,13 @@
   <script src="app/rootScope/rootscopeModule.js"></script>
   <script src="app/interval/intervalModule.js"></script>
   <script src="app/document/documentModule.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('ul.nav li a').click(function (e) {
+        $('ul.nav li.active').removeClass('active')
+        $(this).parent('li').addClass('active')
+      })
+    });
+  </script>
 </body>
 </html>
